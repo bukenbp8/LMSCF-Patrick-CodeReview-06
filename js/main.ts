@@ -11,15 +11,18 @@ class Home {
     description: string;
     address: any;
     zip: any;
-    created: string;
+    createdDate: string;
+    createdTime: string;
 
-    constructor(name: string, picture: string, description: string, address: any, zip: any, created: string){
+    constructor(name: string, picture: string, description: string, address: any, zip: any, createdDate: string, createdTime: string){
         this.name = name;
         this.picture = picture;
         this.description = description;
         this.address = address;
         this.zip = zip;
-        this.created = created;
+        this.createdDate = createdDate;
+        this.createdTime = createdTime;
+
         home.push(this);
     }
     // creates DOM elements
@@ -38,7 +41,7 @@ class Home {
                         <span class="text-center small">Address: ${this.address}, ${this.zip}</span>
                     </div>                 
                 </div>
-                <p class="small font-weight-lighter created bg-light border-bottom border-right border-left rounded-bottom pb-2 pr-2">Created: ${this.created}</p>   
+                <p class="small font-weight-lighter created bg-light border-bottom border-right border-left rounded-bottom pb-2 pr-2">Created: ${this.createdDate} ${this.createdTime}</p>   
             </div>
         `
     }
@@ -46,8 +49,8 @@ class Home {
 
 class Loc extends Home {
     
-    constructor(name: string, picture: string, description: string, address: any, zip: any, created: string){
-        super(name, picture, description, address, zip, created)
+    constructor(name: string, picture: string, description: string, address: any, zip: any, createdDate: string, createdTime: string){
+        super(name, picture, description, address, zip, createdDate, createdTime)
         locaCity.push(this);
     }
 }
@@ -56,8 +59,8 @@ class Res extends Home {
     tel: string;
     web: string;
 
-    constructor(name: string, picture: string, description: string, address: any, zip: any, tel: string, web: string,created: string){
-        super(name, picture, description, address, zip, created)
+    constructor(name: string, picture: string, description: string, address: any, zip: any, tel: string, web: string, createdDate: string, createdTime: string){
+        super(name, picture, description, address, zip, createdDate, createdTime)
         this.tel = tel;
         this.web = web;
         restaCity.push(this);
@@ -80,7 +83,7 @@ class Res extends Home {
                     <p class="text-center small"><a href="${this.web}">Website</a></p>
                 </div>
             </div>
-            <p class="small font-weight-lighter created bg-light border-bottom border-right border-left rounded-bottom pb-2 pr-2">Created: ${this.created}</p>
+            <p class="small font-weight-lighter created bg-light border-bottom border-right border-left rounded-bottom pb-2 pr-2">Created: ${this.createdDate} ${this.createdTime}</p>
         </div>
         `
     }
@@ -92,8 +95,8 @@ class Eve extends Home {
     date: string;
     price: string;
 
-    constructor(name: string, picture: string, description: string, address: any, zip: any, web: string, time: string, date: string, price: string, created: string){
-        super(name, picture, description, address, zip, created)
+    constructor(name: string, picture: string, description: string, address: any, zip: any, web: string, time: string, date: string, price: string, createdDate: string, createdTime: string){
+        super(name, picture, description, address, zip, createdDate, createdTime)
         this.web = web;
         this.time = time;
         this.date = date;
@@ -118,25 +121,24 @@ class Eve extends Home {
                         <p class="text-center small">Starts: ${this.date}, ${this.time}</p>
                     </div>
                 </div>
-                <p class="small font-weight-lighter created bg-light border-bottom border-right border-left rounded-bottom pb-2 pr-2">Created: ${this.created}</p>
+                <p class="small font-weight-lighter created bg-light border-bottom border-right border-left rounded-bottom pb-2 pr-2">Created: ${this.createdDate} ${this.createdTime}</p>
             </div>
         `
     }
 }
 
 // Create "location" objects 
-const poznanCityHall = new Loc("Ratusz Poznanski", "./img/Ratusz.jpg", "City Hall and City Center", "plac Kolegiacki 17", "61-841, Poznan", "24.10.2016 11:45")
-const poznanCathedral = new Loc("Poznan Cathedral", "./img/cathedral.jpg", "The biggest of many Churches", "Ostrów Tumski 17", "61-109, Poznan", "25.10.2016 15:45")
-const poznanBrama = new Loc("Brama Poznania", "./img/brama.jpg", "Museum of Polish History", "Gdańska 2", "61-123 Poznań, Poland", "25.10.2016 9:30")
+const poznanCityHall = new Loc("Ratusz Poznanski", "./img/Ratusz.jpg", "City Hall and City Center", "plac Kolegiacki 17", "61-841, Poznan", "24.10.2016", "10:00")
+const poznanCathedral = new Loc("Poznan Cathedral", "./img/cathedral.jpg", "The biggest of many Churches", "Ostrów Tumski 17", "61-109, Poznan", "25.10.2017", "11:34")
+const poznanBrama = new Loc("Brama Poznania", "./img/brama.jpg", "Museum of Polish History", "Gdańska 2", "61-123 Poznań, Poland", "26.10.2016", "18:23")
 // Create "restaurant" objects
-const rynek = new Res("Rynek 95", "./img/rynek.jpg", "Local cuisine, Polish, Bar, European", "ul. Stary Rynek 95", "61-773, Poland", "+48 884 810 004", "https://www.facebook.com/rynek95", "07.06.2017 19:05")
-const yetztu = new Res("YetzTu", "./img/yetztu.jpg", "Japanese, Asian, Soups", "Krysiewicza 6", "61-825, Poland", "+48 61 840 17 12", "https://www.facebook.com/yetztupoznan/", "16.8.2018 17:55")
-const oberza = new Res("Oberza Pod Dzwonkiem", "./img/oberza.jpg", "Polish, Central European, Vegetarian Friendly", "Garbary 54", "61-758, Poland", "+48 61 851 99 70", "https://www.facebook.com/poddzwonkiem", "22.05.2018 20:40")
+const rynek = new Res("Rynek 95", "./img/rynek.jpg", "Local cuisine, Polish, Bar, European", "ul. Stary Rynek 95", "61-773, Poland", "+48 884 810 004", "https://www.facebook.com/rynek95","24.12.2018", "12:00")
+const yetztu = new Res("YetzTu", "./img/yetztu.jpg", "Japanese, Asian, Soups", "Krysiewicza 6", "61-825, Poland", "+48 61 840 17 12", "https://www.facebook.com/yetztupoznan/", "15.4.2018", "19:26")
+const oberza = new Res("Oberza Pod Dzwonkiem", "./img/oberza.jpg", "Polish, Central European, Vegetarian Friendly", "Garbary 54", "61-758, Poland", "+48 61 851 99 70", "https://www.facebook.com/poddzwonkiem", "5.5.2019", "3:00")
 // Create "event" objects
-const marathon = new Eve("Poznan Marathon", "./img/marathon.jpg", "Starts at Grunwaldzka street Gate 5", "", "", "https://halfmarathon.poznan.pl/en/", "8.00 am", "05.04.2020", "95 PLN", "03.02.2018 12:00")
-const animator = new Eve("Animator Festival", "./img/animator.jpg", "Animated Movies Festival", "Kino Muza, ul. Św. Marcin 30", "", "http://www.animator-festival.com/en/", "4.00 pm", "10 - 17.7.2020", "15 PLN", "02.02.2020 06:45")
-const fest = new Eve("Malta Festival", "./img/malta.jpg", "Music and Art Festival at Lake Malta", "", "", "https://malta-festival.pl/en/", "see schedule", "21 - 30.06.2020", "FREE", "06.08.2019 11:00")
-
+const marathon = new Eve("Poznan Marathon", "./img/marathon.jpg", "Starts at Grunwaldzka street Gate 5", "", "", "https://halfmarathon.poznan.pl/en/", "8:00 AM", "05.04.2020", "95 PLN", "21.6.2019", "15:06")
+const animator = new Eve("Animator Festival", "./img/animator.jpg", "Animated Movies Festival", "Kino Muza, ul. Św. Marcin 30", "", "http://www.animator-festival.com/en/", "4.00 pm", "10 - 17.7.2020", "15 PLN", "4.6.2019", "6:06")
+const fest = new Eve("Malta Festival", "./img/malta.jpg", "Music and Art Festival at Lake Malta", "", "", "https://malta-festival.pl/en/", "see schedule", "21 - 30.06.2020", "FREE", "1.4.2019", "5:12")
 
 // builds home 
 const buildHome = (arr) => {
@@ -232,7 +234,8 @@ document.querySelector('.eve').addEventListener('click', ()=>{
                 </div>
             </div>
         </div>`
-    sortButton(eventCity, buildEvents)    
+    sortButtonUp(eventCity, buildEvents)
+    sortButtonDown(eventCity, buildEvents)    
     arr.forEach((x) => { x.buildEvent()})
 })}
 
@@ -242,11 +245,21 @@ buildLocation(locaCity)
 buildRestaurants(restaCity)
 buildEvents(eventCity)
 
-const sortButton = (arr, buildFunction) => {
+
+const sortButtonUp = (arr, buildFunction) => {
     document.querySelector('.up').addEventListener('click', ()=>{
-        const newArray = arr.sort((a, b) => {
-            return a.name - b.name
-        })
+        const newArray = arr.sort((a,b)=> {
+            return parseInt(b.createdDate.split('.').join("")) - parseInt(a.createdDate.split('.').join(""))
+        });
+        buildFunction(newArray)
+    })
+}
+
+const sortButtonDown = (arr, buildFunction) => {
+    document.querySelector('.up').addEventListener('click', ()=>{
+        const newArray = arr.sort((a,b)=> {
+            return parseInt(a.createdDate.split('.').join("")) - parseInt(b.createdDate.split('.').join(""))
+        });
         buildFunction(newArray)
     })
 }
